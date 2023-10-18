@@ -3,6 +3,7 @@
 *::before {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -12,10 +13,15 @@ html {
 
 body {
   height: 100vh;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 
   button,
   input {
     font-family: inherit;
   }
+}
+
+#root {
+  height: 100vh;
 }

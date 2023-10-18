@@ -4,9 +4,18 @@
 }
 
 @mixin flex($dir, $jus, $ali, $gap) {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: $dir;
   flex-direction: $dir;
+  -webkit-box-pack: $jus;
+  -ms-flex-pack: $jus;
   justify-content: $jus;
+  -webkit-box-align: $ali;
+  -ms-flex-align: $ali;
   align-items: $ali;
   gap: $gap;
 }
@@ -22,6 +31,8 @@
   position: absolute;
   top: $top;
   right: $right;
+  -webkit-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
   transform: translate($x, $y);
 }
 
@@ -29,6 +40,8 @@
   position: absolute;
   top: $top;
   left: $left;
+  -webkit-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
   transform: translate($x, $y);
 }
 
@@ -36,6 +49,8 @@
   position: absolute;
   bottom: $bott;
   right: $right;
+  -webkit-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
   transform: translate($x, $y);
 }
 
@@ -43,5 +58,7 @@
   position: absolute;
   bottom: $bott;
   left: $left;
+  -webkit-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
   transform: translate($x, $y);
 }

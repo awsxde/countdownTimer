@@ -1,10 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+@-webkit-keyframes flip-top {
+  100% {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg); } }
+
 @keyframes flip-top {
   100% {
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg); } }
+
+@-webkit-keyframes flip-bottom {
+  0% {
+    -webkit-transform: rotateX(90deg);
     transform: rotateX(90deg); } }
 
 @keyframes flip-bottom {
   0% {
+    -webkit-transform: rotateX(90deg);
     transform: rotateX(90deg); } }
 
 *,
@@ -12,6 +24,7 @@
 *::before {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: inherit;
   box-sizing: inherit; }
 
 html {
@@ -19,10 +32,14 @@ html {
 
 body {
   height: 100vh;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
   body button,
   body input {
     font-family: inherit; }
+
+#root {
+  height: 100vh; }
 
 body {
   font-family: "Red Hat Text", sans-serif; }
@@ -38,6 +55,20 @@ body {
   background-size: cover, cover;
   background-size: 100%, 100%; }
 
+.logosContainer {
+  width: 17rem;
+  place-items: center;
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: 1;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1fr; }
+
 .title {
   color: white;
   text-transform: uppercase;
@@ -45,6 +76,8 @@ body {
   position: absolute;
   top: 20%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
 .timerContainer {
@@ -53,6 +86,8 @@ body {
   position: absolute;
   top: 45%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-rows: 1;
@@ -75,11 +110,15 @@ body {
     position: absolute;
     top: 50%;
     left: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
   .timerChild .blackCircleRight {
     position: absolute;
     top: 50%;
     right: 0;
+    -webkit-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
     transform: translate(50%, -50%); }
   .timerChildTop {
     width: 100%;
@@ -95,6 +134,8 @@ body {
       position: absolute;
       bottom: -50%;
       left: 50%;
+      -webkit-transform: translate(-50%, 15%);
+      -ms-transform: translate(-50%, 15%);
       transform: translate(-50%, 15%); }
   .timerChildBottom {
     width: 100%;
@@ -110,6 +151,8 @@ body {
       position: absolute;
       bottom: 50%;
       left: 50%;
+      -webkit-transform: translate(-50%, 15%);
+      -ms-transform: translate(-50%, 15%);
       transform: translate(-50%, 15%); }
   .timerChildTitle {
     color: #8486a9;
@@ -119,23 +162,6 @@ body {
     position: absolute;
     bottom: -38%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
-
-.logosContainer {
-  width: 17rem;
-  position: absolute;
-  top: 88%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: grid;
-  grid-template-rows: 1;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1fr;
-  place-items: center; }
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0; }
