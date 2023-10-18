@@ -1,0 +1,77 @@
+.timer {
+  &Container {
+    width: calc(4 * #{$box-size} + 4 * #{$gap-size});
+    height: $box-size;
+    // overflow: hidden;
+
+    @include positionTL(45%, 50%, -50%, -50%);
+    @include grid(1, repeat(4, 1fr), 2.5rem);
+  }
+
+  &Child {
+    width: 100%;
+    height: 100%;
+    font-size: 8rem;
+    box-shadow: 0px 10px 0px 0px $shadow-color;
+    position: relative;
+
+    .blackCircle {
+      &Left,
+      &Right {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        z-index: 999;
+        background-color: $Very-dark-black-blue;
+      }
+
+      &Left {
+        @include positionTL(50%, 0, -50%, -50%);
+      }
+
+      &Right {
+        @include positionTR(50%, 0, 50%, -50%);
+      }
+    }
+
+    &Top {
+      width: 100%;
+      height: 50%;
+      color: $Soft-red-darker;
+      background-color: $Dark-unsaturated-blue-lighter;
+      border-radius: 0.7rem 0.7rem 0 0;
+      position: relative;
+      overflow: hidden;
+      animation: flip-top 250ms ease-in;
+      transform-origin: bottom;
+
+      p {
+        @include positionBL(-50%, 50%, -50%, 15%);
+      }
+    }
+
+    &Bottom {
+      width: 100%;
+      height: 50%;
+      color: $Soft-red;
+      background-color: $Dark-unsaturated-blue;
+      border-radius: 0 0 0.7rem 0.7rem;
+      position: relative;
+      overflow: hidden;
+      animation: flip-bottom 250ms ease-out 250ms;
+      transform-origin: top;
+
+      p {
+        @include positionBL(50%, 50%, -50%, 15%);
+      }
+    }
+
+    &Title {
+      color: $Grayish-blue;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 5px;
+      @include positionBL(-38%, 50%, -50%, -50%);
+    }
+  }
+}

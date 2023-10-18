@@ -1,17 +1,47 @@
-@mixin centerBlock {
+@mixin centerBlock($top, $bott) {
   display: block;
-  margin: 0 auto;
+  margin: $top auto $bott auto;
 }
 
-@mixin centerFlex($justify) {
-  display: flex;
-  justify-content: $justify;
-  align-items: center;
-}
-
-@mixin flex($dir, $jus, $ali) {
+@mixin flex($dir, $jus, $ali, $gap) {
   display: flex;
   flex-direction: $dir;
   justify-content: $jus;
   align-items: $ali;
+  gap: $gap;
+}
+
+@mixin grid($row, $col, $gap) {
+  display: grid;
+  grid-template-rows: $row;
+  grid-template-columns: $col;
+  gap: $gap;
+}
+
+@mixin positionTR($top, $right, $x, $y) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  transform: translate($x, $y);
+}
+
+@mixin positionTL($top, $left, $x, $y) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($x, $y);
+}
+
+@mixin positionBR($bott, $right, $x, $y) {
+  position: absolute;
+  bottom: $bott;
+  right: $right;
+  transform: translate($x, $y);
+}
+
+@mixin positionBL($bott, $left, $x, $y) {
+  position: absolute;
+  bottom: $bott;
+  left: $left;
+  transform: translate($x, $y);
 }

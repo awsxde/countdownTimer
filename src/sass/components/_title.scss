@@ -1,0 +1,7 @@
+.title {
+  color: $White;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+
+  @include positionTL(20%, 50%, -50%, -50%);
+}
