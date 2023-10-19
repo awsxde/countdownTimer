@@ -1,3 +1,7 @@
+import iconFacebook from "./assets/images/icon-facebook.svg";
+import iconPinterest from "./assets/images/icon-pinterest.svg";
+import iconInstagram from "./assets/images/icon-instagram.svg";
+
 export default function App() {
   return (
     <div className="container">
@@ -49,9 +53,9 @@ export default function App() {
         </div>
       </div>
       <div className="logosContainer">
-        <img src="../src/assets/images/icon-facebook.svg" alt="logo" />
-        <img src="../src/assets/images/icon-pinterest.svg" alt="logo" />
-        <img src="../src/assets/images/icon-instagram.svg" alt="logo" />
+        <img src={iconFacebook} alt="logo" />
+        <img src={iconPinterest} alt="logo" />
+        <img src={iconInstagram} alt="logo" />
       </div>
     </div>
   );
